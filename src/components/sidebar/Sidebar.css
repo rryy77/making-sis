@@ -1,0 +1,151 @@
+.sidebar {
+  border-radius: 0 12px 12px 0;
+  background: rgba(255, 255, 255, 0.05); /* 薄い白系ガラス風 */
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border-radius: 0 16px 16px 0;
+  flex: 2.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 70px; /* 黒バーより下から開始 */
+  left: 0;
+  width: 60px;
+  height: 80%;
+  box-sizing: border-box;
+  padding: 10px 0;
+  transition: width 0.3s ease-in-out;
+  overflow: hidden;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+/* ホバーで展開 */
+.sidebar:hover {
+  width: 230px;
+}
+
+/* ホバー時テキスト表示 */
+.sidebar:hover .sidebarListItemText {
+  opacity: 1;
+  transition-delay: 0.25s;
+}
+
+/* アイテムリスト全体 */
+.sidebarWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 0;
+}
+
+/* リスト全体 */
+.sidebarList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* リストの各項目 */
+.sidebarListItem {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  padding: 10px 16px;
+  border-radius: 12px;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+.sidebarListItem:hover {
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+/* アイコン部分 */
+.sidebarIcon {
+  font-size: 24px;
+  width: 40px;
+  height: 35px;
+  flex-shrink: 0;
+  text-align: center;
+  color: #333;
+}
+
+/* テキスト部分 */
+.sidebarListItemText {
+  opacity: 0;
+  margin-left: 15px;
+  transition: opacity 0.3s ease-in-out;
+  white-space: nowrap;
+  color: #e0e0e0;
+}
+
+/* 区切り線 */
+.sidebarHr {
+  height: 1px;
+  background-color: #000000;
+  margin: 20px 0;
+  border: none;
+  width: 80%;
+  align-self: center;
+}
+
+/* プロフィール画像と名前 */
+.sidebarFriend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.sidebarFriendImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 5px;
+  margin-right: 15px;
+}
+
+.sidebarFriendName {
+  font-size: 12px;
+  color: #333;
+}
+
+.sidebarFriendList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebarItem.active {
+  background-color: rgba(0, 224, 225, 0.2);
+  color: #00e0ff;
+}
+
+.sidebarListItem:hover,
+.sidebarListItem.active {
+  color: #ffffff !important;
+}
+
+.sidebarFriendName {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.2s ease;
+}

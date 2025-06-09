@@ -1,0 +1,6 @@
+.rightbar {
+  flex: 3;
+  position: relative;
+  background-color: #0f0f0f;
+  margin-left: auto;
+}

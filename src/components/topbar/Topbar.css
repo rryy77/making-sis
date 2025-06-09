@@ -1,12 +1,15 @@
 .topbarContainer {
-  background-color: #17161e;
-  height: 50px;
-  width: 100%;
+  background-color: #0f0f0f;
+  color: #f1f1f1;
+  height: 60px;
   display: flex;
   align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 999;
+  width: 100%;
 }
 
 .topbarLeft {
@@ -29,6 +32,7 @@
   font-size: 20px !important;
   margin-left: 10px;
   margin-right: 5px;
+  color: #999;
 }
 
 .searchInput {

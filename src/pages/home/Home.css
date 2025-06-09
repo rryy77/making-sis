@@ -1,5 +1,28 @@
 .homeContainer {
   display: flex;
   width: 100%;
-  background-color: #f8fcff;
+  max-width: 750px;
+  margin: auto;
+  background-color: #0f0f0f;
+  color: #e0e0e0;
+  font-family: "Segoe UI", sans-serif;
+  flex-direction: row;
+  align-items: flex-start;
+  height: 100vh;
+}
+
+body,
+html,
+#root {
+  background-color: #0f0f0f !important;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.homeContainer,
+.timeline,
+.rightbar {
+  background-color: #0f0f0f !important;
+  min-height: 100vh;
 }
