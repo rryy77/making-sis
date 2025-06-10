@@ -9,6 +9,7 @@
   flex-direction: row;
   align-items: flex-start;
   height: 100vh;
+  justify-content: space-between;
 }
 
 body,

@@ -1,10 +1,11 @@
 .timeline {
-  display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #0f0f0f;
   flex: 6;
-  margin-left: -60px;
+  margin-left: -150px;
+  overflow: auto;
+  min-width: 0;
 }
 
 .timelineWrapper {

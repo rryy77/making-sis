@@ -1,6 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
 .rightbar {
+  position: absolute;
+  right: 20px;
+  top: 80px;
+  width: 350px;
+  padding: 16px;
   flex: 3;
-  position: relative;
   background-color: #0f0f0f;
-  margin-left: auto;
+  border-radius: 12px;
+  background: rgba(30, 30, 30, 0.85);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+  max-width: 100%;
+  /*font-family: "Orbitron", sans-serif;*/
+}
+
+.rightbar img {
+  margin-bottom: 12px;
+  object-fit: cover;
+  max-width: 100%;
+  display: block;
+}
+
+.eventImg {
+  width: 100%;
+  border-radius: 10px;
+  margin: 25px 0;
+}
+
+.eventContainer {
+  display: flex;
+  align-items: center;
+}
+
+.starImg {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+}
+
+.rightbarTitle {
+  margin-bottom: 20px;
+}
+
+.rightbarFriendList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.rightbarFriend {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.rightbarProfileImgContainer {
+  margin-right: 10px;
+  position: relative;
+}
+
+.rightbarProfileImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.rightbarUsername {
+  font-weight: 550;
 }
