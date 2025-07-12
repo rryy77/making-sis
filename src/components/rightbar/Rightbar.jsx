@@ -1,5 +1,7 @@
 import React from "react";
 import "./Rightbar.css";
+import Online from "../online/Online";
+import { Users } from "../../dummyData";
 
 export default function Rightbar() {
   return (
@@ -14,29 +16,29 @@ export default function Rightbar() {
         <img src="assets/event.jpeg" alt="" className="eventImg" />
         <h4 className="rightbarTitle">Online Friends</h4>
         <ul className="rightbarFriendList">
-          <li className="rightbarFriend">
-            <div className="rightbarProfileImgContainer">
-              <img
-                src="assets/person/1.jpeg"
-                alt=""
-                className="rightbarProfileImg"
-              />
-              <span className="rightbarOnline"></span>
-            </div>
-            <span className="rightbarUsername">r-code</span>
-          </li>
-          <li className="rightbarFriend">
-            <div className="rightbarProfileImgContainer">
-              <img
-                src="assets/person/2.jpeg"
-                alt=""
-                className="rightbarProfileImg"
-              />
-              <span className="rightbarOnline"></span>
-            </div>
-            <span className="rightbarUsername">s-code</span>
-          </li>
+          {Users.map((user) => (
+            <Online user={user} key={user.id} />
+          ))}
         </ul>
+        <p className="promotionTitle">Promo Ad</p>
+        <img
+          src="assets/promotion/promotion1.jpeg"
+          alt=""
+          className="rightbarPromotionImg"
+        />
+        <p className="promotionName">Shopping</p>
+        <img
+          src="assets/promotion/promotion2.jpeg"
+          alt=""
+          className="rightbarPromotionImg"
+        />
+        <p className="promotionName">Carshop</p>
+        <img
+          src="assets/promotion/promotion3.jpeg"
+          alt=""
+          className="rightbarPromotionImg"
+        />
+        <p className="promotionName">c-code company</p>
       </div>
     </div>
   );

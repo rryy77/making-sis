@@ -1,35 +1,51 @@
-import React from "react";
-import MoreVert from "@mui/icons-material/MoreVert";
+import React, { useState } from "react";
+import { MoreVert } from "@mui/icons-material";
 import "./Post.css";
+import { Users } from "../../dummyData";
 
-export default function Post() {
+export default function Post({ post }) {
+  const [like, setLike] = useState(post.like);
+  const [isLiked, setIsLiked] = useState(false);
+  const handleLike = () => {
+    setLike(isLiked ? like - 1 : like + 1);
+    setIsLiked(!isLiked);
+  };
   return (
     <div className="post">
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
             <img
-              src="./assets/person/1.jpeg"
+              src={
+                Users.filter((user) => user.id === post.id)[0].profilePicture
+              }
               alt=""
               className="postProfileImg"
             />
-            <span className="postUsername">R-code</span>
-            <span className="postDate">5分前</span>
+            <span className="postUsername">
+              {Users.filter((user) => user.id === post.id)[0].username}
+            </span>
+            <span className="postDate">{post.data}</span>
           </div>
           <div className="postTopRight"></div>
           <MoreVert className="postOptionsIcon" />
         </div>
         <div className="postCenter">
-          <span className="postText">making sns</span>
-          <img src="./assets/post/1.jpeg" alt="" className="postImg" />
+          <span className="postText">{post.desc}</span>
+          <img src={post.photo} alt="" className="postImg" />
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
-            <img src="./assets/heart.png" alt="" className="likeIcon" />
-            <span className="postLikeCounter">Liked by 5 people</span>
+            <img
+              src="./assets/heart.png"
+              alt=""
+              className="likeIcon"
+              onClick={() => handleLike()}
+            />
+            <span className="postLikeCounter">Liked by {like} people</span>
           </div>
           <div className="postBottom Right">
-            <span className="postCommentText">4:comment </span>
+            <span className="postCommentText">{post.comment}:comment </span>
           </div>
         </div>
       </div>
