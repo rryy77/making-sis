@@ -1,0 +1,135 @@
+.rightbar {
+  flex: 3.5;
+  background-color: #0f0f0f;
+  border-radius: 12px;
+  background: black;
+  backdrop-filter: blur(8px);
+  color: #fff;
+}
+
+.rightbarWrapper {
+  padding: 20px 20px 0 0;
+}
+
+.eventImg {
+  width: 100%;
+  border-radius: 10px;
+  margin: 25px 0;
+}
+
+.eventContainer {
+  display: flex;
+  align-items: center;
+}
+
+.eventText {
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.starImg {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+}
+
+.rightbarTitle {
+  margin-bottom: 20px;
+}
+
+.rightbarFriendList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.rightbarFriend {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.rightbarProfileImgContainer {
+  margin-right: 10px;
+  position: relative;
+}
+
+.rightbarProfileImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.rightbarUsername {
+  font-weight: 550;
+  color: white;
+}
+
+.rightbarOnline {
+  background-color: purple;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  top: -2px;
+  left: 0;
+  border: 2px solid white;
+}
+
+.promotionTitle {
+  font-size: 18px;
+  font-weight: 550;
+  margin-bottom: -10px;
+}
+
+.rightbarPromotionImg {
+  width: 85%;
+  border-radius: 10px;
+  margin: 25px 0;
+}
+
+.promotionName {
+  font-size: small;
+  color: rgb(221, 216, 216);
+  margin-top: -10px;
+}
+
+.rightbarTitle {
+  font-size: 18px;
+  font-weight: 550;
+  margin-bottom: 10px;
+}
+
+.rightbarInfo {
+  margin-bottom: 30px;
+}
+
+.rightbarInfoKey {
+  font-weight: 550;
+  margin-right: 5px;
+  color: #bfbfbf;
+}
+
+.rightbarFollowings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.rightbarFollowing {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.rightbarFollowingImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.rightbarInfoItem {
+  margin-bottom: 10px;
+}
