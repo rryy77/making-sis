@@ -32,7 +32,7 @@ export default function profile() {
             </div>
           </div>
           <div className="profileRightBottom">
-            <TimeLine />
+            <TimeLine username="ry-code" />
             <Rightbar profile />
           </div>
         </div>
