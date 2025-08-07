@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Topbar from "../../components/topbar/Topbar";
 import TimeLine from "../../components/timeline/TimeLine";
 import Sidebar from "../../components/sidebar/Sidebar";
 import "./Profile.css";
 import Rightbar from "../../components/rightbar/Rightbar";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
-export default function profile() {
+export default function Profile() {
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
+
+  const [user, setUser] = useState({});
+  const username = useParams().username;
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const response = await axios.get(
+        `http://localhost:5001/api/users?username=${username}`
+      );
+      console.log(response);
+      setUser(response.data);
+    };
+    fetchUser();
+  }, []);
+
   return (
     <>
       <Topbar />
@@ -16,24 +33,26 @@ export default function profile() {
           <div className="profileRightTop">
             <div className="profileCover">
               <img
-                src={PUBLIC_FOLDER + "/post/3.jpeg"}
+                src={user.coverPicture || PUBLIC_FOLDER + "/post/3.jpeg"}
                 alt=""
                 className="profileCoverImg"
               />
               <img
-                src={PUBLIC_FOLDER + "/person/1.jpeg"}
+                src={
+                  user.profilePicture || PUBLIC_FOLDER + "/person/noAvatar.png"
+                }
                 alt=""
                 className="profileUserImg"
               />
             </div>
             <div className="profileInfo">
-              <h4 className="profileInfoName">Ry Code</h4>
-              <span className="profileInfoDesc">Udemnyfffff</span>
+              <h4 className="profileInfoName">{user.username}</h4>
+              <span className="profileInfoDesc">{user.desc}</span>
             </div>
           </div>
           <div className="profileRightBottom">
-            <TimeLine username="ry-code" />
-            <Rightbar profile />
+            <TimeLine username={username} />
+            <Rightbar user={user} />
           </div>
         </div>
       </div>
