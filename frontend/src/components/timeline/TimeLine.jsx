@@ -1,25 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./TimeLine.css";
 import Share from "../share/Share";
 import Post from "../post/Post";
 // import { Posts } from "../../dummyData";
 import axios from "axios";
+import { AuthContext } from "../../state/AuthContext";
 
 export default function TimeLine({ username }) {
   const [posts, setPosts] = useState([]);
 
+  const { user } = useContext(AuthContext);
+
   useEffect(() => {
     const fetchPosts = async () => {
       const response = username
-        ? await axios.get(`http://localhost:5001/api/posts/profile/${username}`)
+        ? await axios.get(`http://localhost:5001/api/posts/profile/${username}`) //プロフィールの場合
         : await axios.get(
-            "http://localhost:5001/api/posts/timeline/683a8e8cc74e340d4736daf6"
+            `http://localhost:5001/api/posts/timeline/${user._id}` //ホームの場合
           );
-      console.log(response);
+      // console.log(response);
       setPosts(response.data);
     };
     fetchPosts();
-  }, [username]);
+  }, [username, user._id]);
 
   return (
     <div className="timeline">

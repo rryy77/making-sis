@@ -59,7 +59,6 @@ router.get("/profile/:username", async (req, res) => {
 //タイムラインの投稿の取得
 router.get("/timeline/:userId", async (req, res) => {
   try {
-    console.log("fff");
     const currentUser = await User.findById(req.params.userId);
     const userPosts = await Post.find({ userId: currentUser._id });
     //自分がフォローしている友達の投稿内容を全て取得する。
