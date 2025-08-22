@@ -14,6 +14,7 @@ const postRoute = require("./routes/posts");
 const uploadRoute = require("./routes/upload");
 const PORT = 5001;
 const mongoose = require("mongoose");
+const path = require("path");
 require("dotenv").config();
 
 //データベース接続
@@ -25,6 +26,7 @@ mongoose
   .catch((err) => {});
 
 //ミドルウェア
+app.use("/images", express.static(path.join(__dirname, "public/images")));
 app.use(express.json());
 app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);

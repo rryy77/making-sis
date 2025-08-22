@@ -19,7 +19,11 @@ export default function TimeLine({ username }) {
             `http://localhost:5001/api/posts/timeline/${user._id}` //ホームの場合
           );
       // console.log(response);
-      setPosts(response.data);
+      setPosts(
+        response.data.sort((post1, post2) => {
+          return new Date(post2.createdAt) - new Date(post1.createdAt);
+        })
+      );
     };
     fetchPosts();
   }, [username, user._id]);
